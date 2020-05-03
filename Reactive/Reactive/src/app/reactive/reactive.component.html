@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <label for="username">user name</label>
+  <input type="text" id="username" formControlName="username">
+  <div class="error" *ngIf="form.get('username').invalid">User Name is invalid</div>
+  <div class="error" *ngIf="form.get('username').pending">Validating user name</div>
+  <br>
+  <button  [disabled]="form.get('username').invalid || form.get('username').pending">SUBMIT</button>
+</form>
